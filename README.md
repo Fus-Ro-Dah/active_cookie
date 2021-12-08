@@ -25,7 +25,7 @@ Write a command line program in your preferred language to process the log file 
  3. **Running the testing program**
      The testing program has two arguments:
      1. The number of test cases
-     2. The desired length of tesing file
+     2. The desired length of testing file
      Example:
      `python3 tester.py 2 5`
 
