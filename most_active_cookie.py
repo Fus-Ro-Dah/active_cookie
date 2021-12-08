@@ -34,17 +34,19 @@ class Processor:
     #pre: a list containing all cookies in a day is given
     #post: a list containing the most active cookies is returned
     def findMaxOccurence(self, inputDate):
-        #retrieve the list of cookie of a given date
-        listForQuery = self.dict[inputDate]
-        #find the maximum frequency
-        maxFreq = 0
-        for l in listForQuery:
-            if maxFreq < listForQuery.count(l):
-                maxFreq = listForQuery.count(l)
-        #find the corresponding cookie with max frequency
-        for l in listForQuery:
-            if listForQuery.count(l) == maxFreq and l not in self.ans:
-                self.ans.append(l)
+        #if the date doesn't exist, return empty list
+        if inputDate in self.dict:
+            #retrieve the list of cookie of a given date
+            listForQuery = self.dict[inputDate]
+            #find the maximum frequency
+            maxFreq = 0
+            for l in listForQuery:
+                if maxFreq < listForQuery.count(l):
+                    maxFreq = listForQuery.count(l)
+            #find the corresponding cookie with max frequency
+            for l in listForQuery:
+                if listForQuery.count(l) == maxFreq and l not in self.ans:
+                    self.ans.append(l)
         return self.ans
     
     #This function reads the cookie and time in the log into two lists
@@ -94,5 +96,7 @@ if __name__ == '__main__':
     processor.categorizeCookie()  
     #get the list for most active cookies
     res = processor.findMaxOccurence(inputDate)
+    if len(res) == 0:
+        print("There is no such date in the log. ")
     for i in res:
         print(i)

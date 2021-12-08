@@ -21,7 +21,7 @@ Write a command line program in your preferred language to process the log file 
     1. The CSV path
     2. The date query (YYYY-MM-DD), preceded by '-d'
     Example:
-    `python3 most_active_cookie.py cookie_log.csv -d 2018-12-08`
+    `$ ./most\_active\_cookie cookie_log.csv -d 2018-12-08`
  3. **Running the testing program**
      The testing program has two arguments:
      1. The number of test cases
